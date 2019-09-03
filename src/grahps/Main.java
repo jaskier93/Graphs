@@ -23,13 +23,11 @@ public class Main extends Application {
 
         System.out.println("Podaj minamalną wartość X");
         long xMin = scanner.nextLong();
-        long yMin = xMin * a + b;
         long xMax;
         do {
             System.out.println("Podaj maksymalną wartość X, pamiętaj, że musi być większe od x minimalnego!");
             xMax = scanner.nextLong();
         } while (xMax <= xMin);
-        long yMax = xMax * a + b;
         stage.setTitle("Line Chart Sample");
         final NumberAxis xAxis = new NumberAxis(xMin, xMax, 1);
         final NumberAxis yAxis = new NumberAxis();
@@ -45,7 +43,13 @@ public class Main extends Application {
             long y = a * i + b;
             series.getData().add(new XYChart.Data(i, y));
         }
-        Scene scene = new Scene(lineChart, 600, 600);
+
+        System.out.println("Podaj rozmiary okna, zalecane to 800x800 ");
+        System.out.println("Podaj szerokość okna");
+        int width = scanner.nextInt();
+        System.out.println("Podaj wysokość okna");
+        int height = scanner.nextInt();
+        Scene scene = new Scene(lineChart, width, height);
         lineChart.getData().add(series);
 
         stage.setScene(scene);

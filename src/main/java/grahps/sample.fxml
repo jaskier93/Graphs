@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,12 +13,20 @@
       <TextField fx:id="factorA" text="a=" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="730.0" />
       <TextField fx:id="factorB" text="b=" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="640.0" />
       <TextField fx:id="factorC" text="c=" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="560.0" />
-      <TextField fx:id="xMin" text="xMin=" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="480.0" />
-      <TextField fx:id="xMax" text="xMax=" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="390.0" />
+      <TextField text="xMin=" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="480.0" fx:id="xMin" />
+      <TextField text="xMax=" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="390.0" fx:id="xMax" />
       <Label text="f(x)=" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="580.0" AnchorPane.rightAnchor="20.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
+      <LineChart fx:id="chart" prefHeight="654.0" prefWidth="800.0" title="Chart">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
    </children>
 </AnchorPane>

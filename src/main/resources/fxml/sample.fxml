@@ -3,7 +3,6 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,7 +15,7 @@
       <TextField fx:id="factorC" text="c=" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="560.0" />
       <TextField text="xMin=" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="480.0" fx:id="xMin" />
       <TextField text="xMax=" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="390.0" fx:id="xMax" />
-      <Label fx:id="label" text="f(x)=" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="580.0" AnchorPane.rightAnchor="20.0">
+      <Label text="f(x)=" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="580.0" AnchorPane.rightAnchor="20.0" fx:id="label">
          <font>
             <Font size="18.0" />
          </font>
@@ -29,6 +28,5 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </LineChart>
-      <Button fx:id="button" layoutX="464.0" layoutY="674.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="98.0" text="Ok" />
    </children>
 </AnchorPane>

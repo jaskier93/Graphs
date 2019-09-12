@@ -1,21 +1,16 @@
 package grahps;
 
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+
 import javafx.scene.Scene;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class Controller  {
+
     @FXML
     TextField factorA;
     @FXML
@@ -41,19 +36,8 @@ public class Controller implements Initializable {
     double b = Double.parseDouble(factorB.getText());
     double c = Double.parseDouble(factorC.getText());
 
-    /*
-    @FXML
-    private void chartPattern(ActiveEvent event) {
-        String pattern;
-        if (a == 0 && c == 0) {
-            pattern = "f(x)=" + factorB;
-        } else if (c == 0) {
-            pattern = "f(x)=" + factorA + "x+" + factorB;
-        } else {
-            pattern = "f(x)=" + factorC + "x^2" + factorA + "x+" + factorB;
-        }
-        label.setText(pattern);
-    }*/
+
+
 
     @FXML
     public void drawChart(Stage stage) {
@@ -68,13 +52,15 @@ public class Controller implements Initializable {
         final javafx.scene.chart.LineChart<Number, Number> lineChart = new javafx.scene.chart.LineChart<Number, Number>(xAxis, yAxis);
         double y;
 
-        button.setName(label.getText());
+        // button.setName(label.getText());
 
-                String pattern;
+        String pattern;
         if (a == 0 && c == 0) {
             pattern = "f(x)=" + factorB;
+            label.setText(pattern);
         } else if (c == 0) {
             pattern = "f(x)=" + factorA + "x+" + factorB;
+            label.setText(pattern);
             //Dla wykresu liniowego, i++ można ewentualnie zmienić na i+TickUnit (jeśli jest inny niż 1)
             for (double i = xMin1; i <= xMax1; i++) {
                 y = a * i + b;
@@ -82,22 +68,18 @@ public class Controller implements Initializable {
             }
         } else {
             pattern = "f(x)=" + factorC + "x^2" + factorA + "x+" + factorB;
+            label.setText(pattern);
             //Dla paraboli, i++ można ewentualnie zmienić na i+TickUnit (jeśli jest inny niż 1)
             for (double i = xMin1; i < xMax1; i++) {
                 y = a * i * i + b * i + c;
                 series.getData().add(new XYChart.Data(i, y));
             }
         }
-        label.setText(pattern);
 
         Scene scene = new Scene(lineChart, 800, 800);
         lineChart.getData().add(series);
         stage.setScene(scene);
         stage.setResizable(false); //Stały rozmiar okienka
-        stage.show();
-    }
-
-    public void initialize(URL location, ResourceBundle resources) {
-
+        //  stage.show();
     }
 }

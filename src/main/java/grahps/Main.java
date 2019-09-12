@@ -4,32 +4,31 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
+import java.io.File;
+import java.net.FileNameMap;
+import java.net.URL;
 
 public class Main extends Application {
 
-    Controller controller;
+    private Controller controller;//
 
     @Override
     public void start(Stage stage) throws Exception {
- /*       System.out.printf("Wybierz rodzaj wykresu, który chcesz narysować: \n" +
-                "1. Wykres liniowy.\n" +
-                "2. Parabola.\n");
-        int choice;
-        do {
-            choice = scanner.nextInt();
-            if (choice == 1) {
-                lineChart.lineChartGraph(stage);
-            } else if (choice == 2) {
-                parabola.parabolaGraph(stage);
-            } else {
-                System.out.printf("Wybierz wykres wpisując 1 lub 2.");
-            }
-        } while (choice != 1 || choice != 2);*/
+        stage.show();
 
+        File file = new File("src/main/resources/fxml");
+
+        System.out.println(getClass().getResource("/fxml/sample.fxml").getPath());
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/sample.fxml"));
+        loader.setController(controller);
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/sample.fxml"));
-        stage.setScene(new Scene(root, 800, 800));
-        controller.drawChart(stage);
+        Scene scene = new Scene(root, 800, 800);
+        //     controller.drawChart(stage);
+
+        stage.setScene(scene);
     }
 
 

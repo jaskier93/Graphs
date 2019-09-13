@@ -1,4 +1,4 @@
-package grahps;
+package graph;
 
 import javafx.scene.Scene;
 import javafx.scene.chart.NumberAxis;
@@ -8,17 +8,15 @@ import javafx.stage.Stage;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
-class Parabola {
+class LineChart {
 
-    void parabolaGraph(Stage stage) {
+    void lineChartGraph(Stage stage) {
         Scanner scanner = new Scanner(System.in);
-        String title = "Parabola chart graph";
+        String title = "Line Chart Sample";
         System.out.println("Podaj wartość współczynnika a");
         BigDecimal a = scanner.nextBigDecimal();
         System.out.println("Podaj wartość współczynnika b");
         BigDecimal b = scanner.nextBigDecimal();
-        System.out.println("Podaj wartość współczynnika c");
-        BigDecimal c = scanner.nextBigDecimal();
 
         System.out.println("Podaj minamalną wartość X");
         double xMin = scanner.nextDouble();
@@ -30,15 +28,17 @@ class Parabola {
         stage.setTitle(title);
         final NumberAxis xAxis = new NumberAxis(xMin, xMax, 1);
         final NumberAxis yAxis = new NumberAxis();
+        yAxis.setTickUnit(1);
+        xAxis.setLabel("X Label");
+        yAxis.setLabel("Y Label");
         final javafx.scene.chart.LineChart<Number, Number> lineChart = new javafx.scene.chart.LineChart<Number, Number>(xAxis, yAxis);
         lineChart.setTitle(title);
         XYChart.Series series = new XYChart.Series();
+        series.setName("Wzór Twojego równania to: y=" + a + "x + " + b);
 
-        series.setName("Wzór Twojego równania to: y=" + a + "x^2 + " + b + "x + " + c);
-        for (double i = xMin; i < xMax; i++) {
+        for (double i = xMin; i <= xMax; i++) {
             BigDecimal counter = new BigDecimal(i);
-            BigDecimal counter2 = counter.multiply(counter);
-            BigDecimal y = a.multiply(counter2).add(b.multiply(counter).add(c));
+            BigDecimal y = a.multiply(counter).add(b);
             series.getData().add(new XYChart.Data(i, y));
         }
 
@@ -54,5 +54,3 @@ class Parabola {
         stage.show();
     }
 }
-
-

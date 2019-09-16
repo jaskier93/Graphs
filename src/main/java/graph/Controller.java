@@ -1,5 +1,7 @@
 package graph;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -39,15 +41,14 @@ public class Controller {
     public void drawChart(Stage stage) {
         XYChart.Series<Number, Number> series = chart;
         series.setName("Chart");
-
-        final NumberAxis xAxis = new NumberAxis(xMin1, xMax1, 1);
+        double axisTick = 1;
+        final NumberAxis xAxis = new NumberAxis(xMin1, xMax1, axisTick);
         final NumberAxis yAxis = new NumberAxis();
-        yAxis.setTickUnit(1);
+        yAxis.setTickUnit(axisTick);
         xAxis.setLabel("X Label");
         yAxis.setLabel("Y Label");
         final javafx.scene.chart.LineChart<Number, Number> lineChart = new javafx.scene.chart.LineChart<Number, Number>(xAxis, yAxis);
         double y;
-
 
         String pattern;
         if (a == 0 && c == 0) {
@@ -70,7 +71,7 @@ public class Controller {
         }
 
         lineChart.getData().add(series);
-        Scene scene = new Scene(lineChart, 800, 800);
+        Scene scene = new Scene(lineChart, 800, 700);
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

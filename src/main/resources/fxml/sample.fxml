@@ -9,38 +9,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
-            minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
-            xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <TextField fx:id="factorA" layoutX="24.0" layoutY="598.0" prefHeight="33.0" prefWidth="106.0" text="a="
-                   AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="670.0"/>
-        <TextField fx:id="factorB" layoutX="24.0" layoutY="630.0" prefHeight="33.0" prefWidth="106.0" text="b="
-                   AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="670.0"/>
-        <TextField fx:id="factorC" layoutX="24.0" layoutY="674.0" prefHeight="33.0" prefWidth="106.0" text="c="
-                   AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="670.0"/>
-        <TextField layoutX="158.0" layoutY="592.0" prefHeight="47.0" prefWidth="120.0" text="xMin="
-                   AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="522.0"
-                   fx:id="xMin"/>
-        <TextField layoutX="158.0" layoutY="650.0" prefHeight="47.0" prefWidth="120.0" text="xMax="
-                   AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="522.0"
-                   fx:id="xMax"/>
-        <Label fx:id="label" layoutX="468.0" layoutY="629.0" prefHeight="61.0" prefWidth="276.0" text="f(x)="
-               AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="468.0" AnchorPane.rightAnchor="56.0">
+        <Button fx:id="button" layoutX="574.0" layoutY="576.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="220.0" text="Rysuj wykres" />
+        <TextField fx:id="factorA" layoutX="100.0" layoutY="576.0" prefHeight="33.0" prefWidth="106.0"  />
+        <TextField fx:id="factorB" layoutX="100.0" layoutY="617.0" prefHeight="33.0" prefWidth="106.0" />
+        <TextField fx:id="factorC" layoutX="100.0" layoutY="660.0" prefHeight="33.0" prefWidth="106.0" />
+        <TextField layoutX="390.0" layoutY="576.0" prefHeight="47.0" prefWidth="120.0"  fx:id="xMin" />
+        <TextField layoutX="390.0" layoutY="643.0" prefHeight="47.0" prefWidth="120.0"  fx:id="xMax" />
+        <Label fx:id="label" layoutX="574.0" layoutY="633.0" prefHeight="61.0" prefWidth="220.0" text="f(x)=">
             <font>
-                <Font size="18.0"/>
+                <Font size="18.0" />
             </font>
         </Label>
-        <LineChart fx:id="chart" prefHeight="598.0" prefWidth="800.0" title="Chart">
+        <LineChart fx:id="chart" prefHeight="560.0" prefWidth="800.0" title="Chart">
             <xAxis>
-                <CategoryAxis side="BOTTOM"/>
+                <CategoryAxis side="BOTTOM" />
             </xAxis>
             <yAxis>
-                <NumberAxis side="LEFT"/>
+                <NumberAxis side="LEFT" />
             </yAxis>
         </LineChart>
-        <Button fx:id="button"  layoutX="317.0" layoutY="612.0" mnemonicParsing="false" prefHeight="61.0"
-                prefWidth="98.0" text="Rysuj wykres"/>
+      <Label layoutX="70.0" layoutY="576.0" prefHeight="33.0" prefWidth="20.0" text="a=" />
+      <Label layoutX="70.0" layoutY="617.0" prefHeight="33.0" prefWidth="20.0" text="b=" />
+      <Label layoutX="70.0" layoutY="660.0" prefHeight="33.0" prefWidth="20.0" text="c=" />
+      <Label layoutX="337.0" layoutY="576.0" prefHeight="47.0" prefWidth="45.0" text="xMin=" />
+      <Label layoutX="337.0" layoutY="643.0" prefHeight="47.0" prefWidth="45.0" text="xMax=" />
     </children>
 </AnchorPane>

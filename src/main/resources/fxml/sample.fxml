@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
@@ -9,27 +8,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0"
-            xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graph.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graph.Controller">
     <children>
-        <TextField fx:id="factorA" prefHeight="33.0" prefWidth="106.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="670.0" promptText="a" />
-        <TextField fx:id="factorB" prefHeight="33.0" prefWidth="106.0" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="670.0" promptText="b" />
-        <TextField fx:id="factorC" prefHeight="33.0" prefWidth="106.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="670.0" promptText="c" />
-        <TextField fx:id="xMin" prefHeight="47.0" prefWidth="120.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="522.0" promptText="xMin" />
-        <TextField fx:id="xMax" prefHeight="47.0" prefWidth="120.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="522.0" promptText="xMax" />
-        <Label fx:id="label" prefHeight="61.0" prefWidth="276.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="468.0" AnchorPane.rightAnchor="56.0" text="f(x)=" >
+        <TextField fx:id="factorA" prefHeight="33.0" prefWidth="106.0" promptText="a" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="670.0" />
+        <TextField fx:id="factorB" prefHeight="33.0" prefWidth="106.0" promptText="b" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="670.0" />
+        <TextField fx:id="factorC" prefHeight="33.0" prefWidth="106.0" promptText="c" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="670.0" />
+        <TextField prefHeight="47.0" prefWidth="120.0" promptText="xMin" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="522.0" fx:id="xMin" />
+        <TextField prefHeight="47.0" prefWidth="120.0" promptText="xMax" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="522.0" fx:id="xMax" />
+        <Label fx:id="label" prefHeight="61.0" prefWidth="276.0" text="f(x)=" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="468.0" AnchorPane.rightAnchor="56.0">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <LineChart fx:id="chart" prefHeight="598.0" prefWidth="800.0" title="Chart">
+        <LineChart fx:id="chart" animated="false" legendVisible="false" prefHeight="700.0" prefWidth="800.0" title="Chart">
             <xAxis>
-                <NumberAxis fx:id="xAxis" side="BOTTOM" />
+                <NumberAxis side="BOTTOM" fx:id="xAxis" />
             </xAxis>
             <yAxis>
                 <NumberAxis fx:id="yAxis" side="LEFT" />
             </yAxis>
         </LineChart>
-        <Button fx:id="button" prefHeight="61.0" prefWidth="98.0" layoutX="317.0" layoutY="612.0" mnemonicParsing="false" text="Rysuj wykres" onAction="#updateChart" />
+        <Button fx:id="button" layoutX="317.0" layoutY="620.0" mnemonicParsing="false" onAction="#updateChart" prefHeight="31.0" prefWidth="98.0" text="Rysuj wykres" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="330.0" AnchorPane.rightAnchor="360.0" AnchorPane.topAnchor="720.0" />
     </children>
 </AnchorPane>

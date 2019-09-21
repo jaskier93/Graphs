@@ -54,8 +54,6 @@ public class Controller {
         double c = Double.parseDouble(factorC.getText());
 
         XYChart.Series<Number, Number> series = new XYChart.Series<Number, Number>();
-        series.setName("Chart");
-
         String pattern;
         if (a == 0 && c == 0) {
             pattern = "f(x)=" + factorB;

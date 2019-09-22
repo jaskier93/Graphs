@@ -20,7 +20,7 @@
                 <Font size="18.0" />
             </font>
         </Label>
-        <LineChart fx:id="chart" animated="false" legendVisible="false" prefHeight="700.0" prefWidth="800.0" title="Chart">
+        <LineChart fx:id="chart" animated="false" legendVisible="false" prefHeight="580.0" prefWidth="800.0" title="Chart">
             <xAxis>
                 <NumberAxis side="BOTTOM" fx:id="xAxis" />
             </xAxis>

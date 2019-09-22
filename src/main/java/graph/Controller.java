@@ -8,7 +8,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-
 public class Controller {
     @FXML
     TextField factorA;
@@ -83,6 +82,7 @@ public class Controller {
     }
 
     private void initInputControls() {
+        chart.setCreateSymbols(false);
         xMax.setText("0");
         xMin.setText("0");
         factorA.setText("0");

@@ -55,7 +55,7 @@ public class Controller {
         XYChart.Series<Number, Number> series = new XYChart.Series<Number, Number>();
         String pattern;
         if (a == 0 && c == 0) {
-            pattern = "f(x)=" + factorB;
+            pattern = "f(x)=" + factorB.getText();
             label.setText(pattern);
         } else if (c == 0) {
             pattern = "f(x)=" + factorA.getText() + "x+" + factorB.getText();

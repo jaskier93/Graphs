@@ -1,12 +1,11 @@
 package graph;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 public class Controller {
     @FXML
@@ -52,11 +51,21 @@ public class Controller {
         double b = Double.parseDouble(factorB.getText());
         double c = Double.parseDouble(factorC.getText());
 
+        if ((xMin1 >= xMax1) && xMax1 != 0 && xMin1 != 0) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "xMax musi być większe od xMin!", ButtonType.OK);
+            ButtonType result = alert.showAndWait().orElse(ButtonType.NO);
+        }
+
         XYChart.Series<Number, Number> series = new XYChart.Series<Number, Number>();
         String pattern;
         if (a == 0 && c == 0) {
+            for (double i = xMin1; i <= xMax1; i++) {
+                double y = b;
+                series.getData().add(new XYChart.Data<Number, Number>(i, y));
+            }
             pattern = "f(x)=" + factorB.getText();
             label.setText(pattern);
+
         } else if (c == 0) {
             pattern = "f(x)=" + factorA.getText() + "x+" + factorB.getText();
             label.setText(pattern);

@@ -53,15 +53,14 @@ public class Controller {
 
         if ((xMin1 >= xMax1) && xMax1 != 0 && xMin1 != 0) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "xMax musi być większe od xMin!", ButtonType.OK);
-            ButtonType result = alert.showAndWait().orElse(ButtonType.NO);
+            ButtonType result = alert.showAndWait().orElse(ButtonType.OK);
         }
 
         XYChart.Series<Number, Number> series = new XYChart.Series<Number, Number>();
         String pattern;
         if (a == 0 && c == 0) {
             for (double i = xMin1; i <= xMax1; i++) {
-                double y = b;
-                series.getData().add(new XYChart.Data<Number, Number>(i, y));
+                series.getData().add(new XYChart.Data<Number, Number>(i, b));
             }
             pattern = "f(x)=" + factorB.getText();
             label.setText(pattern);
